@@ -23,3 +23,6 @@ lean_lib «Theophysics_Fall»
 
 @[default_target]
 lean_lib «Theophysics_ChiEvaluator»
+
+@[default_target]
+lean_lib «Theophysics_NegativeInventory»
