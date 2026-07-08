@@ -1,5 +1,7 @@
 # Faith-Thru-Physics-Lean-4-
 
+[![Lean CI](https://github.com/DavidLoweOKC/Faith-Thru-Physics-Lean-4-/actions/workflows/lean.yml/badge.svg)](https://github.com/DavidLoweOKC/Faith-Thru-Physics-Lean-4-/actions/workflows/lean.yml)
+
 This repo is now the staged Lean 4 home for the current Faith Thru Physics proof set.
 
 ## Current staged structure
