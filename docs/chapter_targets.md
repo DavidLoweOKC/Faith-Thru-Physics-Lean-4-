@@ -58,4 +58,3 @@ ChapterTargets.Ch12.L4_requires_L1: no axioms
 
 These are Candidate formal targets. Before any chapter claim becomes Admitted,
 replace abstract law fields with stronger definitions and add negative controls.
-
