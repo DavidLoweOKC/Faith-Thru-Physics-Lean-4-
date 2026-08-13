@@ -26,3 +26,6 @@ lean_lib «Theophysics_ChiEvaluator»
 
 @[default_target]
 lean_lib «Theophysics_NegativeInventory»
+
+@[default_target]
+lean_lib ResurrectionFormal
