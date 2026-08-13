@@ -35,3 +35,6 @@ lean_lib QuantitativeStructure
 
 @[default_target]
 lean_lib RootTrinityIso
+
+@[default_target]
+lean_lib ChapterTargets
