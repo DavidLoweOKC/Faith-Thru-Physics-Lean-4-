@@ -29,3 +29,6 @@ lean_lib «Theophysics_NegativeInventory»
 
 @[default_target]
 lean_lib ResurrectionFormal
+
+@[default_target]
+lean_lib QuantitativeStructure
