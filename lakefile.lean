@@ -32,3 +32,6 @@ lean_lib ResurrectionFormal
 
 @[default_target]
 lean_lib QuantitativeStructure
+
+@[default_target]
+lean_lib RootTrinityIso
