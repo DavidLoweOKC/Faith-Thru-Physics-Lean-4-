@@ -1,0 +1,179 @@
+{
+  "schema": "theophysics-z3-receipt-v5",
+  "generated_utc": "2026-08-24T07:40:30.519913+00:00",
+  "sources": [
+    {
+      "path": "\\\\dlowenas\\zobsidian\\__New\\Theophysics.new\\Master EQ\\Derivation\\FRUITS_PARENT_LOVE_NOETHER_SOURCE_PRETEST_LEDGER_2026-08-24.md",
+      "exists": true,
+      "sha256": "CF88D40B8B19FB11B7F691859AA3515D52198BE094389AC35F939FFC84E4900A"
+    },
+    {
+      "path": "\\\\dlowenas\\zobsidian\\__New\\Theophysics.new\\Master EQ\\Derivation\\MASTER_EQUATION_COMPLETE_DERIVATION_CANONICAL.md",
+      "exists": true,
+      "sha256": "2DD9F0DC054965B1FA8FD0FB3580E4FD5ACABD9078DA63FA1824CF8E39726945"
+    }
+  ],
+  "tests": [
+    {
+      "id": "LZ-01",
+      "name": "bare_physics_cannot_detect_hidden_consent",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Equal physical inputs force equal classifier output when consent is not an input."
+    },
+    {
+      "id": "LZ-02",
+      "name": "voluntary_and_coercive_are_disjoint",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Frozen consent definitions forbid overlap of voluntary and coercive coupling."
+    },
+    {
+      "id": "LZ-03",
+      "name": "active_coupling_is_exhaustively_classified",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Boolean consent makes active coupling either voluntary or coercive."
+    },
+    {
+      "id": "LZ-04",
+      "name": "consent_gate_blocks_effective_coupling",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "The declared multiplicative gate makes absent consent annihilate effective coupling."
+    },
+    {
+      "id": "LZ-05",
+      "name": "binding_alone_admits_coercion",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_consent_a = False, l_consent_b = False, l_coupling = 1]",
+      "note": "A weakened predicate equal to active binding accepts a coercive model."
+    },
+    {
+      "id": "LZ-06",
+      "name": "omitting_identity_admits_assimilation",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_coupling = 1,\n l_consent_a = True,\n l_identity_preserved = False,\n l_consent_b = True,\n l_delta_b = 1,\n l_delta_a = 1,\n l_generative = True]",
+      "note": "All retained conditions can hold while identity preservation is false."
+    },
+    {
+      "id": "LZ-07",
+      "name": "omitting_flourishing_admits_exploitation",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_coupling = 1,\n l_consent_a = True,\n l_identity_preserved = True,\n l_consent_b = True,\n l_delta_a = -1,\n l_generative = True]",
+      "note": "All retained conditions can hold while one participant is harmed."
+    },
+    {
+      "id": "LZ-08",
+      "name": "generativity_is_independent",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_coupling = 1,\n l_consent_a = True,\n l_generative = False,\n l_consent_b = True,\n l_delta_b = 1,\n l_delta_a = 1,\n l_identity_preserved = True]",
+      "note": "Generativity is not entailed by consent, identity, and flourishing alone."
+    },
+    {
+      "id": "LZ-09a",
+      "name": "captivity_fails_full_candidate",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Declared negative-control mode cannot satisfy every full-candidate condition."
+    },
+    {
+      "id": "LZ-09b",
+      "name": "codependency_fails_full_candidate",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Declared negative-control mode cannot satisfy every full-candidate condition."
+    },
+    {
+      "id": "LZ-09c",
+      "name": "domination_fails_full_candidate",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Declared negative-control mode cannot satisfy every full-candidate condition."
+    },
+    {
+      "id": "LZ-09d",
+      "name": "nongenerative_exchange_fails_full_candidate",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Declared negative-control mode cannot satisfy every full-candidate condition."
+    },
+    {
+      "id": "LZ-10",
+      "name": "range_constraints_do_not_fix_fruit_labels",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_fruit_2 = 0,\n l_fruit_3 = 0,\n l_fruit_8 = 0,\n l_fruit_6 = 1,\n l_fruit_7 = 0,\n l_fruit_0 = 0,\n l_fruit_5 = 0,\n l_fruit_4 = 0,\n l_fruit_1 = 0]",
+      "note": "A nonidentity Peace/Faithfulness swap survives when only output ranges are frozen."
+    },
+    {
+      "id": "LZ-11",
+      "name": "local_stability_and_global_invariance_are_independent_slots",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_energy_after = 0,\n l_curvature_2 = 1,\n l_energy_before = 0,\n l_curvature_1 = 2]",
+      "note": "Conserved energy can remain fixed while local curvature varies across admissible systems."
+    },
+    {
+      "id": "LZ-12a",
+      "name": "effective_cornell_stationary_witness_exists",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[l_witness_radius = 1]",
+      "note": "A fully rational positive stationary-radius witness exists."
+    },
+    {
+      "id": "LZ-12b",
+      "name": "effective_cornell_positive_stationary_radius_is_unique",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Strict monotonicity of k*r^3+alpha*r forbids two positive roots."
+    },
+    {
+      "id": "LZ-13",
+      "name": "effective_cornell_stationary_curvature_is_positive",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "At stationarity the numerator equals alpha*r+3*k*r^3, which is positive."
+    }
+  ],
+  "counts": {
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "expected_sat": 7,
+    "expected_unsat": 10
+  },
+  "interpretation": "Passing validates expected consequences and countermodels of the frozen candidate encoding; it does not prove a theological isomorphism."
+}
