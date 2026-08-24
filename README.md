@@ -8,10 +8,25 @@ This repo is now the staged Lean 4 home for the current Faith Thru Physics proof
 
 ### No local installation
 
-Open the **Actions** tab, select **Lean CI**, and choose **Run workflow**. GitHub
-will create a clean machine, install the pinned Lean toolchain, build the
-project, directly check `PrivativeMagnitude.lean`, reject proof escapes in that
-kernel, and publish a downloadable verification receipt.
+Every push is checked on a clean public GitHub machine. Open the **Actions**
+tab, select the newest **Lean CI** run, and inspect or download its public
+verification receipt. The workflow builds the complete project, directly
+checks `PrivativeMagnitude.lean` and `KernelV1.lean`, rejects proof escapes in
+both kernels, and records their hashes and axiom reports.
+
+GitHub permits only repository collaborators to press **Run workflow** in this
+repository. An outside reader can use **Fork**, enable Actions in the fork, and
+run the identical workflow on an independent GitHub machine without installing
+Lean locally.
+
+### Public download
+
+Anyone can open the repository without signing in and choose **Code -> Download
+ZIP**, or clone it with:
+
+```text
+git clone https://github.com/DavidLoweOKC/Faith-Thru-Physics-Lean-4-.git
+```
 
 ### Windows: double-click verifier
 
@@ -29,12 +44,19 @@ Mathlib cache, builds the project, audits the kernel, and writes
 The initial Mathlib download requires an internet connection and several
 gigabytes of free disk space.
 
-## Current verified kernel
+## Current verified kernels
 
 `PrivativeMagnitude.lean` formalizes the real-number model
 `E = sigma * (1 - d) * P`. Its six theorems concern magnitude, deprivation,
 orientation, and borrowed capacity. See [PROOF_BOUNDARY.md](PROOF_BOUNDARY.md)
 for the exact premises and non-results.
+
+`KernelV1.lean` formalizes the first master-equation derivation surface: the
+nine-coordinate product architecture, zero-veto and rigidity, the bare Cornell
+stationary-point obstruction, and separation of idempotent and nilpotent
+operator roles. See
+[`LEAN_VALIDATION/OBLIGATION_LEDGER.md`](LEAN_VALIDATION/OBLIGATION_LEDGER.md)
+for the full validation queue and proof boundaries.
 
 **A passing build proves consequences of the encoded model. It does not by
 itself prove the theological or physical interpretation.**

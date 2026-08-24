@@ -27,6 +27,12 @@ jobs:
           set -o pipefail
           lake env lean PrivativeMagnitude.lean | tee privative-magnitude-axioms.txt
 
+      - name: Verify derivation kernel v1 directly
+        shell: bash
+        run: |
+          set -o pipefail
+          lake env lean KernelV1.lean | tee kernel-v1-axioms.txt
+
       - name: Reject missing or vacuous kernel
         shell: bash
         run: |
@@ -51,6 +57,14 @@ jobs:
             exit 1
           fi
 
+      - name: Reject proof escapes in derivation kernel v1
+        shell: bash
+        run: |
+          if grep -nE '\b(sorry|admit|unsafe)\b|^[[:space:]]*axiom\b' KernelV1.lean; then
+            echo "Proof escape detected in KernelV1.lean"
+            exit 1
+          fi
+
       - name: Write public verification receipt
         shell: bash
         run: |
@@ -59,10 +73,13 @@ jobs:
             lean --version
             lake --version
             sha256sum PrivativeMagnitude.lean
+            sha256sum KernelV1.lean
             echo "lake_build=passed"
-            echo "direct_kernel_check=passed"
+            echo "privative_magnitude_direct_check=passed"
+            echo "kernel_v1_direct_check=passed"
             echo "proof_escape_scan=passed"
             cat privative-magnitude-axioms.txt
+            cat kernel-v1-axioms.txt
           } > verification-receipt.txt
 
       - name: Upload verification receipt
