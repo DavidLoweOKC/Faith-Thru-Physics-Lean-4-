@@ -10,6 +10,33 @@ require mathlib from git
 lean_lib «PrivativeMagnitude»
 
 @[default_target]
+lean_lib «PremiseAblation»
+
+@[default_target]
+lean_lib «GlobalRestoration»
+
+@[default_target]
+lean_lib «PopulationRestoration»
+
+@[default_target]
+lean_lib «CandidateComparison»
+
+@[default_target]
+lean_lib «DeathScopeAudit»
+
+@[default_target]
+lean_lib «ReligiousComparison»
+
+@[default_target]
+lean_lib «ParticipationVsAuthority»
+
+@[default_target]
+lean_lib «ContinuityJusticeAudit»
+
+@[default_target]
+lean_lib «ResurrectionHypothesisComparison»
+
+@[default_target]
 lean_lib «Final_Lean4_From_Excel»
 
 @[default_target]
