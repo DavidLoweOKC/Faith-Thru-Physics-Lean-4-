@@ -1,0 +1,141 @@
+{
+  "schema": "theophysics-z3-receipt-v1",
+  "generated_utc": "2026-08-24T06:11:50.721625+00:00",
+  "canonical_source": "Z:\\__New\\Theophysics.new\\Master EQ\\Derivation\\MASTER_EQUATION_COMPLETE_DERIVATION_CANONICAL.md",
+  "canonical_source_sha256": "B768D2AC921D492FFB48525F04DD58749465E195228A1540FAA1CDA34300CCB4",
+  "tests": [
+    {
+      "name": "normalized_product_is_satisfiable",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "counterexample": "[x_4 = 1/2,\n x_2 = 1/2,\n x_5 = 1/2,\n x_7 = 1/2,\n x_0 = 1/2,\n x_3 = 1/2,\n x_1 = 1/2,\n x_6 = 1/2,\n x_8 = 1/2]",
+      "note": "Witness check for a nonempty normalized domain."
+    },
+    {
+      "name": "product_stays_in_unit_interval",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "No product outside [0,1] exists when all coordinates are bounded."
+    },
+    {
+      "name": "zero_veto_coordinate_1",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_2",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_3",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_4",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_5",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_6",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_7",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_8",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "zero_veto_coordinate_9",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "A zero necessary coordinate forces the product to zero."
+    },
+    {
+      "name": "product_one_forces_all_coordinates_one",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "Perfect product coherence cannot hide a deficient coordinate."
+    },
+    {
+      "name": "coordinatewise_increase_cannot_lower_product",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "Coordinatewise increase cannot reduce the identity-wrapper product."
+    },
+    {
+      "name": "bare_cornell_has_no_positive_radius_stationary_point",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "V'(r)=0 after clearing the positive denominator r^2."
+    },
+    {
+      "name": "nonzero_anticommuting_idempotent_is_impossible_2sector",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "counterexample": null,
+      "note": "The grace channel and sign-changing jump cannot be one operator."
+    },
+    {
+      "name": "nonzero_anticommuting_nilpotent_jump_exists_2sector",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "counterexample": "[j01 = 0, j10 = -1]",
+      "note": "A model exists for the separate conversion jump."
+    }
+  ],
+  "counts": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0
+  }
+}
