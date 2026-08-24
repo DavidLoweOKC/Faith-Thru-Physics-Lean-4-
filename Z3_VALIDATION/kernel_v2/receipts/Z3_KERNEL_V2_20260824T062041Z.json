@@ -1,0 +1,121 @@
+{
+  "schema": "theophysics-z3-receipt-v2",
+  "generated_utc": "2026-08-24T06:20:41.812252+00:00",
+  "canonical_source": "Z:\\__New\\Theophysics.new\\Master EQ\\Derivation\\MASTER_EQUATION_COMPLETE_DERIVATION_CANONICAL.md",
+  "canonical_source_sha256": "B768D2AC921D492FFB48525F04DD58749465E195228A1540FAA1CDA34300CCB4",
+  "tests": [
+    {
+      "id": "P01",
+      "name": "privative_magnitude_bounded_by_given_power",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "For E=sigma*(1-d)*P, |E| cannot exceed P on the declared domain."
+    },
+    {
+      "id": "P02",
+      "name": "total_deprivation_forces_zero",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "At d=1 the remaining enactment is exactly zero."
+    },
+    {
+      "id": "P03",
+      "name": "opposite_orientations_have_equal_magnitude",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Changing orientation changes sign, not magnitude, at fixed d and P."
+    },
+    {
+      "id": "P04",
+      "name": "increasing_deprivation_cannot_increase_magnitude",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "If d1<=d2, the magnitude at d2 cannot exceed the magnitude at d1."
+    },
+    {
+      "id": "P05",
+      "name": "nonzero_privative_enactment_retains_orientation",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "With P>0 and d<1, E is strictly positive/negative according to sigma."
+    },
+    {
+      "id": "D01",
+      "name": "sanctification_field_points_inward_at_zero",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "At c=0, f(c)=repair is nonnegative."
+    },
+    {
+      "id": "D02",
+      "name": "sanctification_field_points_inward_at_one",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "At c=1, f(c)=-decay is nonpositive."
+    },
+    {
+      "id": "D03",
+      "name": "sanctification_equilibrium_is_unique",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Any fixed point equals repair/(decay+repair) when total rate is positive."
+    },
+    {
+      "id": "D04",
+      "name": "sanctification_equilibrium_lies_in_unit_interval",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "The equilibrium lies in [0,1] for nonnegative decay and repair."
+    },
+    {
+      "id": "D05",
+      "name": "sanctification_field_points_toward_equilibrium",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "Below equilibrium the field is positive; above it the field is negative."
+    },
+    {
+      "id": "D06",
+      "name": "positive_decay_exposes_noncompletion_at_one",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[d_decay = 1, d_repair = 0]",
+      "note": "Expected countermodel: with positive decay, c=1 is not a fixed point."
+    },
+    {
+      "id": "D07",
+      "name": "completion_at_one_iff_decay_is_zero",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "For this constant-rate ODE, c=1 is fixed exactly when decay=0."
+    }
+  ],
+  "counts": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  }
+}
