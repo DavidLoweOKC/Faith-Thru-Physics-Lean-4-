@@ -11,8 +11,9 @@ This repo is now the staged Lean 4 home for the current Faith Thru Physics proof
 Every push is checked on a clean public GitHub machine. Open the **Actions**
 tab, select the newest **Lean CI** run, and inspect or download its public
 verification receipt. The workflow builds the complete project, directly
-checks `PrivativeMagnitude.lean` and `KernelV1.lean`, rejects proof escapes in
-both kernels, and records their hashes and axiom reports.
+checks `PrivativeMagnitude.lean`, `KernelV1.lean`, and the all-at-once
+`MasterDerivation.lean` root, rejects proof escapes in the audited surfaces,
+rejects a vacuous `True` certificate, and records hashes and axiom reports.
 
 GitHub permits only repository collaborators to press **Run workflow** in this
 repository. An outside reader can use **Fork**, enable Actions in the fork, and
@@ -57,6 +58,13 @@ stationary-point obstruction, and separation of idempotent and nilpotent
 operator roles. See
 [`LEAN_VALIDATION/OBLIGATION_LEDGER.md`](LEAN_VALIDATION/OBLIGATION_LEDGER.md)
 for the full validation queue and proof boundaries.
+
+`MasterDerivation.lean` imports every current root module in one build and
+constructs a non-vacuous `CurrentCertificate` from the theorem surfaces that
+have earned integration status. Older compatibility markers whose entire
+proposition is merely `True` remain visible but are excluded from the
+certificate. See
+[`LEAN_VALIDATION/INTEGRATION_DEBT.md`](LEAN_VALIDATION/INTEGRATION_DEBT.md).
 
 **A passing build proves consequences of the encoded model. It does not by
 itself prove the theological or physical interpretation.**

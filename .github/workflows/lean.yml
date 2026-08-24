@@ -33,6 +33,12 @@ jobs:
           set -o pipefail
           lake env lean KernelV1.lean | tee kernel-v1-axioms.txt
 
+      - name: Verify integrated master derivation directly
+        shell: bash
+        run: |
+          set -o pipefail
+          lake env lean MasterDerivation.lean | tee master-derivation-axioms.txt
+
       - name: Reject missing or vacuous kernel
         shell: bash
         run: |
@@ -65,6 +71,18 @@ jobs:
             exit 1
           fi
 
+      - name: Reject proof escapes or vacuous certificate in integrated root
+        shell: bash
+        run: |
+          if grep -nE '\b(sorry|admit|unsafe)\b|^[[:space:]]*axiom\b' MasterDerivation.lean; then
+            echo "Proof escape detected in MasterDerivation.lean"
+            exit 1
+          fi
+          if grep -nE ':[[:space:]]*True[[:space:]]*:=' MasterDerivation.lean; then
+            echo "Vacuous True theorem detected in MasterDerivation.lean"
+            exit 1
+          fi
+
       - name: Write public verification receipt
         shell: bash
         run: |
@@ -74,12 +92,18 @@ jobs:
             lake --version
             sha256sum PrivativeMagnitude.lean
             sha256sum KernelV1.lean
+            sha256sum MasterDerivation.lean
             echo "lake_build=passed"
             echo "privative_magnitude_direct_check=passed"
             echo "kernel_v1_direct_check=passed"
+            echo "integrated_master_derivation_direct_check=passed"
             echo "proof_escape_scan=passed"
+            echo "integrated_root_vacuity_scan=passed"
+            printf 'legacy_true_marker_count='
+            grep -Ec 'theorem .*:[[:space:]]*True[[:space:]]*:=[[:space:]]*by[[:space:]]+trivial' Theophysics_Core.lean || true
             cat privative-magnitude-axioms.txt
             cat kernel-v1-axioms.txt
+            cat master-derivation-axioms.txt
           } > verification-receipt.txt
 
       - name: Upload verification receipt
