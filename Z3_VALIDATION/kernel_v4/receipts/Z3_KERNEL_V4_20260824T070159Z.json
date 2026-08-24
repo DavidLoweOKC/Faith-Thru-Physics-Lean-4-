@@ -1,0 +1,58 @@
+{
+  "schema": "theophysics-z3-receipt-v4",
+  "generated_utc": "2026-08-24T07:01:59.633993+00:00",
+  "canonical_source": "Z:\\__New\\Theophysics.new\\Master EQ\\Derivation\\MASTER_EQUATION_COMPLETE_DERIVATION_CANONICAL.md",
+  "canonical_source_sha256": "B768D2AC921D492FFB48525F04DD58749465E195228A1540FAA1CDA34300CCB4",
+  "tests": [
+    {
+      "id": "S01",
+      "name": "commuting_self_operation_has_no_negative_to_positive_component",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "For e_-=(1,0), the positive component of A e_- is a10; commutation forces it to zero."
+    },
+    {
+      "id": "S02",
+      "name": "noncommuting_negative_to_positive_flip_exists",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[s_a11 = 0, s_a10 = 1, s_a00 = 0, s_a01 = 0]",
+      "note": "Without the commutation premise, A=|+><-| maps e_- to e_+ and fails to commute with sigma_hat."
+    },
+    {
+      "id": "S03",
+      "name": "three_state_domain_alone_allows_reversion",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[s_current = 1,\n s_following = -1,\n s_transition_open = [else -> True]]",
+      "note": "The status set {-1,0,+1} alone does not prohibit a +1 to -1 transition."
+    },
+    {
+      "id": "S04",
+      "name": "absorbing_positive_status_forbids_reversion",
+      "expected": "unsat",
+      "actual": "unsat",
+      "passed": true,
+      "model": null,
+      "note": "The explicit transition graph makes +1 absorbing, so +1 to -1 is impossible."
+    },
+    {
+      "id": "S05",
+      "name": "idempotent_grace_and_nilpotent_conversion_coexist",
+      "expected": "sat",
+      "actual": "sat",
+      "passed": true,
+      "model": "[s_g00 = 0,\n s_g10 = 0,\n s_l00 = 0,\n s_l01 = 0,\n s_l10 = 1,\n s_g11 = 1,\n s_g01 = 0,\n s_l11 = 0]",
+      "note": "A model exists with separate G^2=G and L^2=0 operators, with G fixing e_+ and L mapping e_- to e_+."
+    }
+  ],
+  "counts": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  }
+}
