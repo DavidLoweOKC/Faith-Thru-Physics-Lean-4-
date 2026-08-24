@@ -4,6 +4,41 @@
 
 This repo is now the staged Lean 4 home for the current Faith Thru Physics proof set.
 
+## Verify it yourself
+
+### No local installation
+
+Open the **Actions** tab, select **Lean CI**, and choose **Run workflow**. GitHub
+will create a clean machine, install the pinned Lean toolchain, build the
+project, directly check `PrivativeMagnitude.lean`, reject proof escapes in that
+kernel, and publish a downloadable verification receipt.
+
+### Windows: double-click verifier
+
+Download or clone the repository, then double-click:
+
+```text
+VERIFY.bat
+```
+
+If Lean is missing, the script transparently downloads the official `elan`
+installer, installs the pinned toolchain from `lean-toolchain`, downloads the
+Mathlib cache, builds the project, audits the kernel, and writes
+`verification-receipt.txt`.
+
+The initial Mathlib download requires an internet connection and several
+gigabytes of free disk space.
+
+## Current verified kernel
+
+`PrivativeMagnitude.lean` formalizes the real-number model
+`E = sigma * (1 - d) * P`. Its six theorems concern magnitude, deprivation,
+orientation, and borrowed capacity. See [PROOF_BOUNDARY.md](PROOF_BOUNDARY.md)
+for the exact premises and non-results.
+
+**A passing build proves consequences of the encoded model. It does not by
+itself prove the theological or physical interpretation.**
+
 ## Current staged structure
 
 - `BUILD_CONFIG/`

@@ -21,3 +21,53 @@ jobs:
           test: false
           lint: false
 
+      - name: Verify privative magnitude kernel directly
+        shell: bash
+        run: |
+          set -o pipefail
+          lake env lean PrivativeMagnitude.lean | tee privative-magnitude-axioms.txt
+
+      - name: Reject missing or vacuous kernel
+        shell: bash
+        run: |
+          test "$(wc -c < PrivativeMagnitude.lean)" -gt 1000
+          for theorem in \
+            abs_effect_eq_remaining \
+            bounded_power \
+            total_deprivation_annihilates \
+            sign_changes_direction_not_magnitude \
+            deprivation_reduces_capacity \
+            opposition_is_borrowed
+          do
+            grep -qE "theorem[[:space:]]+${theorem}\b" PrivativeMagnitude.lean
+            grep -q "PrivativeMagnitude.${theorem}" privative-magnitude-axioms.txt
+          done
+
+      - name: Reject proof escapes in privative magnitude kernel
+        shell: bash
+        run: |
+          if grep -nE '\b(sorry|admit|unsafe)\b|^[[:space:]]*axiom\b' PrivativeMagnitude.lean; then
+            echo "Proof escape detected in PrivativeMagnitude.lean"
+            exit 1
+          fi
+
+      - name: Write public verification receipt
+        shell: bash
+        run: |
+          {
+            echo "commit=${GITHUB_SHA}"
+            lean --version
+            lake --version
+            sha256sum PrivativeMagnitude.lean
+            echo "lake_build=passed"
+            echo "direct_kernel_check=passed"
+            echo "proof_escape_scan=passed"
+            cat privative-magnitude-axioms.txt
+          } > verification-receipt.txt
+
+      - name: Upload verification receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-verification-receipt
+          path: verification-receipt.txt
+
