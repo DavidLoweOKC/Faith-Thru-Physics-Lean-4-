@@ -1,0 +1,23 @@
+PROOF CHAIN MINIMAL GAUNTLET — COMPILE RECEIPT
+Date: 2026-08-25
+
+Source:
+Z:\__New\Theophysics.new\___AXIOM\01_CANON\16_WATCHER\ProofChainMinimalGauntlet.lean
+
+Lean executable:
+C:\Users\David\.elan\toolchains\leanprover--lean4---v4.31.0\bin\lean.exe
+
+Result:
+EXIT=0
+PRINT_AXIOMS_RECEIPTS=19
+SORRIES=0
+UNDECLARED_AXIOMS=0
+
+SHA256:
+EB64675F52FB209CB58A4C1F56C637ACE0DB468F71C405B6681ACA7AD4084EB2
+
+Interpretation:
+The file compiles without sorry and every printed theorem reports that it does
+not depend on any axioms. This verifies the encoded mathematical implications.
+It does not verify the empirical, physical, philosophical, or theological
+bridges discussed in the accompanying story and audit.
