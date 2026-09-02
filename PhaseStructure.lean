@@ -69,7 +69,7 @@ theorem positive_curvature_of_nonzero_normal_mode
     0 < s.curvature :=
   positive_curvature_of_real_nonzero_oscillation s hMode
 
-/-- A nonzero mode earns stationarity and positive curvature in this local model. -/
+/-- At an assumed stationary point, a nonzero mode earns positive curvature and local quadratic stability. -/
 theorem local_quadratic_stability_of_nonzero_normal_mode
     (s : OscillationData) (hMode : NonzeroNormalMode s) :
     LocalQuadraticStability s := by
